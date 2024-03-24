@@ -1,0 +1,102 @@
+
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;    
+}
+
+header
+{
+    width: 100%;
+    background: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) ;
+}
+
+.logo 
+{
+    margin-left: 20px;
+    /* please add logo elements here!!!! */
+}
+
+
+.search-bar 
+{
+    margin-right: 20px;
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 540px;
+    height: 70px;
+    background: #000000;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto";
+}
+nav a
+{
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 500;
+    color:#fff;
+    text-decoration: none;
+    padding: 0 23px;
+    position: relative;
+    z-index: 1;
+
+}
+
+nav span
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95px;
+    height: 100%;
+    background: linear-gradient(45deg, #1e8144, #5FFB17);
+    border-radius: 8px;
+    transition: left .5s, width 0.5s;
+}
+
+
+nav a:nth-child(1):hover~span
+{
+    left: 0;
+    width: 95px;
+
+}
+nav a:nth-child(2):hover~span
+{
+    left: 95px;
+    width: 94px;
+    
+}
+nav a:nth-child(3):hover~span
+{
+    left: 189px;
+    width: 100px;
+}
+nav a:nth-child(4):hover~span
+{
+    left: 289px;
+    width: 124px;
+}
+nav a:nth-child(5):hover~span
+{
+    left: 413px;
+    width: 127px;
+}
