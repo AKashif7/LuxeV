@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Gallery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2; /* Light grey background */
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #444;
+      text-decoration: underline;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .thumbnail {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      width: 200px; /* Adjust the width of the thumbnail */
+      height: 200px; /* Adjust the height of the thumbnail */
+    }
+    .thumbnail:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    }
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Scale the image to cover the entire box */
+      border-radius: 10px;
+    }
+    .details-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+    .details-overlay.active {
+      display: flex;
+    }
+    .details-container {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 80%;
+      max-height: 80%;
+      overflow: auto;
+      animation: fadeIn 0.5s ease; /* Fade-in animation */
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+    #color-picker {
+      margin-top: auto;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .gallery {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 20px;
+   max-width: 1200px;
+   margin: 0 auto;
+ }
+
+ @media (max-width: 768px) {
+   .gallery {
+     grid-template-columns: repeat(2, 1fr);
+   }
+ }
+
+ @media (max-width: 480px) {
+   .gallery {
+     grid-template-columns: 1fr;
+   }
+ }
+
+ #imageDetail img {
+     max-width: 600px ;
+     max-height: 600px ;
+   }
+
+
+  </style>
+</head>
+<body>
+  <h1>Sustainability Gallery</h1>
+  <div class="gallery">
+    <!-- Thumbnails -->
+    <div class="thumbnail" onclick="showDetails('Dubai, UAE', 'Dubai is sustainable due to their waste management and keeping their city as clean as possible. The city\'s water conversation is amazing and because of this they are able to manage their water resources more sustainably.', 'Coursework/images/dubai.webp')">
+      <img src="Coursework/images/dubai.webp" alt="Dubai, UAE">
+    </div>
+    <div class="thumbnail" onclick="showDetails('Singapore, Asia', 'Singapore is known for its efficient public transportation, green spaces, and sustainable urban planning. The city-state has implemented initiatives to reduce carbon emissions and promote environmental sustainability.', 'Coursework/images/singapore.webp')">
+      <img src="Coursework/images/singapore.webp" alt="Singapore, Asia">
+    </div>
+    <div class="thumbnail" onclick="showDetails('Iceland, Europe', 'Iceland is a leader in renewable energy sources such as hydropower and geothermal energy. The country\'s commitment to clean energy and sustainable practices contributes to its overall environmental sustainability.', 'Coursework/images/iceland.webp')">
+      <img src="Coursework/images/iceland.webp" alt="Iceland, Europe">
+    </div>
+    <div class="thumbnail" onclick="showDetails('Stockholm, Sweden', 'Stockholm is recognized for its innovative environmental policies, such as waste management and renewable energy initiatives. The city\'s commitment to sustainability has made it a model for other urban areas.', 'Coursework/images/stockholm.webp')">
+      <img src="Coursework/images/stockholm.webp" alt="Stockholm, Sweden">
+    </div>
+    <div class="thumbnail" onclick="showDetails('Vancouver, Canada', 'Vancouver is known for its green initiatives, including extensive bike lanes, electric vehicle infrastructure, and green building standards. The city prioritizes sustainability in its urban planning.', 'Coursework/images/vancouver.webp')">
+      <img src="Coursework/images/vancouver.webp" alt="Vancouver, Canada">
+    </div>
+    <div class="thumbnail" onclick="showDetails('Copenhagen, Denmark', 'Copenhagen is renowned for its commitment to cycling, renewable energy, and sustainable urban development. The city\'s efforts have significantly reduced carbon emissions and improved quality of life.', 'Coursework/images/copenhagen.webp')">
+      <img src="Coursework/images/copenhagen.webp" alt="Copenhagen, Denmark">
+    </div>
+    <div class="thumbnail" onclick="showDetails('Tokyo, Japan', 'Tokyo is known for its advanced technology and sustainable transportation systems. The city prioritizes energy efficiency and green spaces, contributing to its environmental sustainability.', 'Coursework/images/tokyo.webp')">
+      <img src="Coursework/images/tokyo.webp" alt="Tokyo, Japan">
+    </div>
+    <div class="thumbnail" onclick="showDetails('Oslo, Norway', 'Oslo is committed to reducing carbon emissions and promoting sustainable living. The city invests in renewable energy and eco-friendly infrastructure, making it a leader in environmental sustainability.', 'Coursework/images/oslo.webp')">
+      <img src="Coursework/images/oslo.webp" alt="Oslo, Norway">
+    </div>
+  </div>
+
+  <div class="details-overlay" id="detailsOverlay" onclick="hideDetails()">
+    <div class="details-container">
+      <span class="close-btn" onclick="hideDetails()">X</span>
+      <div id="imageDetail"></div>
+    </div>
+  </div>
+
+  <div id="color-picker">
+    <label for="page-color">Page Color:</label>
+    <input type="color" id="page-color">
+    <label for="font-style">Font Style:</label>
+    <select id="font-style">
+      <option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Segoe UI</option>
+      <option value="Arial, sans-serif">Arial</option>
+      <option value="Helvetica, sans-serif">Helvetica</option>
+    </select>
+  </div>
+
+  <script>
+    const detailsOverlay = document.getElementById('detailsOverlay');
+    const imageDetail = document.getElementById('imageDetail');
+
+    function showDetails(title, description, imageUrl) {
+      imageDetail.innerHTML = `
+        <h2>${title}</h2>
+        <img src="${imageUrl}" alt="${title}">
+        <p>${description}</p>
+      `;
+      detailsOverlay.classList.add('active');
+    }
+
+    function hideDetails() {
+      detailsOverlay.classList.remove('active');
+    }
+
+    document.querySelector('#page-color').addEventListener('input', (e) => {
+      document.body.style.backgroundColor = e.target.value;
+    });
+
+    document.querySelector('#font-style').addEventListener('change', (e) => {
+      document.body.style.fontFamily = e.target.value;
+    });
+  </script>
+</body>
+</html>
