@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxeV Sitemap</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin-top: 120px; /* Added margin to move the content below the navbar */
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+    }
+
+    ul li .main-button,
+    ul li .sub-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      transition-duration: 0.2s;
+      cursor: pointer;
+      display: block;
+      z-index: 1;
+      position: relative;
+      margin: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    ul li .main-button:hover,
+    ul li .sub-button:hover {
+      background-color: #45a049;
+    }
+
+    .sub {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+    }
+
+    .sub-active {
+      display: block;
+    }
+
+    .sub li {
+      margin-top: 5px;
+    }
+
+    /* Navbar CSS */
+    /* This is the style for the navigation bar */
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, verdana;
+    }
+
+    .navbar {
+      width: 100%;
+      margin: auto;
+      padding: 35px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0px;
+      background-color: white; /* Added background color for navbar */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow for navbar */
+      z-index: 1000; /* Ensure navbar stays on top */
+    }
+
+    .navbar ul li {
+      list-style: none;
+      display: inline-block;
+      margin: 0 20px;
+      position: relative;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #000000;
+      text-transform: uppercase;
+    }
+
+    .navbar ul li::after {
+      content: '';
+      height: 3px;
+      width: 0;
+      background: #009688;
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      transition: 0.5s;
+    }
+
+    .navbar ul li:hover:after {
+      width: 100%;
+    }
+
+    /* Below, is the style and placement for the logo: */
+    .navbar img {
+      width: 120px;
+      cursor: pointer;
+    }
+
+    .navbar img::after {
+      content: '';
+      height: 3px;
+      width: 0;
+      background: #009688;
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      transition: width 0.5s;
+    }
+
+    .navbar img:hover:after {
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="navbar">
+       <a href="#">
+           <img src="LuxeV_logo_green.png" alt="LuxeV logo">
+       </a>
+       <ul>
+           <li><a href="LuxeV_Student_2_Coursework.html">Home</a></li>
+           <li><a href="About Us.html">About Us</a></li>
+           <li><a href="Our Properties.html">Our Properties</a></li>
+           <li><a href="https://w1887705.users.ecs.westminster.ac.uk/LuxeV/Gallery.html">The Gallery</a></li>
+           <li><a href="Contact Us.html">Contact Us</a></li>
+       </ul>
+   </div>
+  <h1>LuxeV Sitemap</h1>
+  <ul>
+    <li>
+      <a class="main-button" href="link-to-homepage" data-link="Insert link for Homepage">Homepage</a>
+
+      <div class="connector"></div>
+      <ul class="sub sub-active">
+        <li><a class="sub-button" href="link-to-shop" data-link="Insert link for the Shop">Shop</a></li>
+
+        <li><a class="sub-button" href="https://w1887705.users.ecs.westminster.ac.uk/LuxeV/Sitemap.html" data-link="Insert link for Sitemap">Sitemap</a></li>
+
+        <li><a class="sub-button" href="link-to-splash-screen" data-link="Insert link for Splash Screen">Splash Screen</a></li>
+      </ul>
+    </li>
+    <li>
+      <a class="main-button" href="link-to-user-profile" data-link="Insert link for the User Profile">User Profile</a>
+
+      <div class="connector"></div>
+      <ul class="sub sub-active">
+        <li><a class="sub-button" href="link-to-team" data-link="Insert link for Team">Team</a></li>
+
+        <li><a class="sub-button" href="link-to-feedback" data-link="Insert link for Feedback">Feedback</a></li>
+
+      </ul>
+    </li>
+    <li>
+      <a class="main-button" href="https://w1887705.users.ecs.westminster.ac.uk/LuxeV/Gallery.html" data-link="Insert link for Gallery">The Gallery</a>
+
+      <div class="connector"></div>
+      <ul class="sub sub-active">
+        <li><a class="sub-button" href="link-to-contents-page" data-link="Insert link for Contents Page">Content Page</a></li>
+
+        <li><a class="sub-button" href="link-to-page-editor" data-link="Insert link for Page Editor">Page Editor</a></li>
+
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>
