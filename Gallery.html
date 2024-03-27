@@ -5,150 +5,233 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Gallery</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f2f2f2; /* Light grey background */
-      color: #333;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
-    h1 {
-      text-align: center;
-      margin: 20px 0;
-      color: #444;
-      text-decoration: underline;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .thumbnail {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      width: 200px; /* Adjust the width of the thumbnail */
-      height: 200px; /* Adjust the height of the thumbnail */
-    }
-    .thumbnail:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-    }
-    .thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Scale the image to cover the entire box */
-      border-radius: 10px;
-    }
-    .details-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 2;
-    }
-    .details-overlay.active {
-      display: flex;
-    }
-    .details-container {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 80%;
-      max-height: 80%;
-      overflow: auto;
-      animation: fadeIn 0.5s ease; /* Fade-in animation */
-    }
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-    }
-    #color-picker {
-      margin-top: auto;
-      text-align: center;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f2f2f2;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
       }
-      to {
-        opacity: 1;
+      h1 {
+        text-align: center;
+        margin: 100px 0 20px;
+        color: #444;
+        text-decoration: underline;
+}
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 20px auto 50px;
       }
-    }
+      .thumbnail {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        width: 200px;
+        height: 200px;
+      }
+      .thumbnail:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+      }
+      .thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .details-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+      }
+      .details-overlay.active {
+        display: flex;
+      }
+      .details-container {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 80%;
+        max-height: 80%;
+        overflow: auto;
+        animation: fadeIn 0.5s ease;
+      }
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      #color-picker {
+        margin-top: auto;
+        text-align: center;
+      }
 
-    .gallery {
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   gap: 20px;
-   max-width: 1200px;
-   margin: 0 auto;
- }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
- @media (max-width: 768px) {
-   .gallery {
-     grid-template-columns: repeat(2, 1fr);
+      .gallery {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 20px;
+     max-width: 1200px;
+     margin: 0 auto;
    }
- }
 
- @media (max-width: 480px) {
-   .gallery {
-     grid-template-columns: 1fr;
-   }
- }
-
- #imageDetail img {
-     max-width: 600px ;
-     max-height: 600px ;
+   @media (max-width: 768px) {
+     .gallery {
+       grid-template-columns: repeat(2, 1fr);
+     }
    }
 
+   @media (max-width: 480px) {
+     .gallery {
+       grid-template-columns: 1fr;
+     }
+   }
 
-  </style>
+   #imageDetail img {
+       max-width: 600px ;
+       max-height: 600px ;
+     }
+
+
+     * {
+       margin: 0;
+       padding: 0;
+       font-family: Arial, Helvetica, verdana;
+     }
+
+     .navbar {
+       width: 100%;
+       margin: auto;
+       padding: 35px 0;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       position: fixed;
+       top: 0px;
+       background-color: white;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       z-index: 1000;
+     }
+
+     .navbar ul li {
+       list-style: none;
+       display: inline-block;
+       margin: 0 20px;
+       position: relative;
+     }
+
+     .navbar ul li a {
+       text-decoration: none;
+       color: #000000;
+       text-transform: uppercase;
+     }
+
+     .navbar ul li::after {
+       content: '';
+       height: 3px;
+       width: 0;
+       background: #009688;
+       position: absolute;
+       left: 0;
+       bottom: -10px;
+       transition: 0.5s;
+     }
+
+     .navbar ul li:hover:after {
+       width: 100%;
+     }
+
+    
+     .navbar img {
+       width: 120px;
+       cursor: pointer;
+     }
+
+     .navbar img::after {
+       content: '';
+       height: 3px;
+       width: 0;
+       background: #009688;
+       position: absolute;
+       left: 0;
+       bottom: -10px;
+       transition: width 0.5s;
+     }
+
+     .navbar img:hover:after {
+       width: 100%;
+     }
+
+    </style>
 </head>
 <body>
+  <div class="navbar">
+       <a href="#">
+           <img src="LuxeV_logo_green.png" alt="LuxeV logo">
+       </a>
+       <ul>
+           <li><a href="LuxeV_Student_2_Coursework.html">Home</a></li>
+           <li><a href="About Us.html">About Us</a></li>
+           <li><a href="Our Properties.html">Our Properties</a></li>
+           <li><a href="https://w1887705.users.ecs.westminster.ac.uk/LuxeV/Gallery.html">The Gallery</a></li>
+           <li><a href="Contact Us.html">Contact Us</a></li>
+       </ul>
+   </div>
   <h1>Sustainability Gallery</h1>
   <div class="gallery">
     <!-- Thumbnails -->
-    <div class="thumbnail" onclick="showDetails('Dubai, UAE', 'Dubai is sustainable due to their waste management and keeping their city as clean as possible. The city\'s water conversation is amazing and because of this they are able to manage their water resources more sustainably.', 'Coursework/images/dubai.webp')">
-      <img src="Coursework/images/dubai.webp" alt="Dubai, UAE">
+    <div class="thumbnail" onclick="showDetails('Dubai, UAE', 'Dubai has made significant strides towards sustainability through innovative initiatives. The city prioritises renewable energy, with projects like the Mohammed bin Rashid Al Maktoum Solar Park aiming to meet a substantial portion of its energy needs sustainably. Its commitment to green buildings like the Burj Khalifa, showcases advanced technologies for energy efficiency. Additionally, Dubai\’s investment in public transportation, such as the metro system and plans for electric and autonomous vehicles, reduces carbon emissions and helps with traffic congestion. Furthermore, the city\'s dedication to water conservation and waste management demonstrates a holistic approach to sustainability, making Dubai a model for environmentally conscious urban development.', 'images/dubai.webp')">
+      <img src="images/dubai.webp" alt="Dubai, UAE">
     </div>
-    <div class="thumbnail" onclick="showDetails('Singapore, Asia', 'Singapore is known for its efficient public transportation, green spaces, and sustainable urban planning. The city-state has implemented initiatives to reduce carbon emissions and promote environmental sustainability.', 'Coursework/images/singapore.webp')">
-      <img src="Coursework/images/singapore.webp" alt="Singapore, Asia">
+    <div class="thumbnail" onclick="showDetails('Singapore, Asia', 'Singapore\'s sustainability is driven by several key factors. First, its efficient public transportation system reduces reliance on cars, cutting down on pollution and traffic congestion. Secondly, the city prioritises green spaces and parks, providing residents with access to nature and improving air quality. Thirdly, Singapore implements strict waste management policies, including recycling programs and waste-to-energy initiatives, to minimise landfill waste. Additionally, the government encourages green building practices and invests in renewable energy sources like solar power. Overall, Singapore\'s commitment to urban planning, environmental conservation, and innovation makes it a sustainable city.', 'images/singapore.webp')">
+      <img src="images/singapore.webp" alt="Singapore, Asia">
     </div>
-    <div class="thumbnail" onclick="showDetails('Iceland, Europe', 'Iceland is a leader in renewable energy sources such as hydropower and geothermal energy. The country\'s commitment to clean energy and sustainable practices contributes to its overall environmental sustainability.', 'Coursework/images/iceland.webp')">
-      <img src="Coursework/images/iceland.webp" alt="Iceland, Europe">
+    <div class="thumbnail" onclick="showDetails('Iceland, Europe', 'Iceland is sustainable primarily due to its abundant renewable energy sources and strong environmental conservation efforts. The country relies heavily on hydropower and geothermal energy for electricity production, reducing its dependence on fossil fuels and mitigating greenhouse gas emissions. Iceland has strict environmental regulations to protect its unique ecosystems, such as its glaciers and volcanic landscapes. The government also promotes sustainable fishing practices to maintain healthy marine ecosystems. Overall, Iceland\'s emphasis on renewable energy, environmental protection, and sustainable resource management contributes to its reputation as a sustainable nation.', 'images/iceland.webp')">
+      <img src="images/iceland.webp" alt="Iceland, Europe">
     </div>
-    <div class="thumbnail" onclick="showDetails('Stockholm, Sweden', 'Stockholm is recognized for its innovative environmental policies, such as waste management and renewable energy initiatives. The city\'s commitment to sustainability has made it a model for other urban areas.', 'Coursework/images/stockholm.webp')">
-      <img src="Coursework/images/stockholm.webp" alt="Stockholm, Sweden">
+    <div class="thumbnail" onclick="showDetails('Stockholm, Sweden', 'Stockholm is sustainable for various reasons. Firstly, the city has invested significantly in renewable energy sources like wind and bioenergy, reducing its carbon footprint. Secondly, Stockholm promotes eco-friendly transportation options, such as extensive bike lanes and efficient public transit systems, which help decrease air pollution and traffic congestion. Thirdly, the city prioritises green spaces and urban planning, ensuring residents have access to nature and clean environments. Additionally, Stockholm implements innovative waste management strategies, including recycling programs and waste-to-energy plants, to minimise landfill waste. Overall, Stockholm\'s commitment to renewable energy, sustainable transportation, green urban spaces, and waste management contributes to its reputation as a sustainable city.
+', 'images/stockholm.webp')">
+      <img src="images/stockholm.webp" alt="Stockholm, Sweden">
     </div>
-    <div class="thumbnail" onclick="showDetails('Vancouver, Canada', 'Vancouver is known for its green initiatives, including extensive bike lanes, electric vehicle infrastructure, and green building standards. The city prioritizes sustainability in its urban planning.', 'Coursework/images/vancouver.webp')">
-      <img src="Coursework/images/vancouver.webp" alt="Vancouver, Canada">
+    <div class="thumbnail" onclick="showDetails('Vancouver, Canada', 'Vancouver is sustainable thanks to several key factors. Firstly, the city has embraced green initiatives like extensive bike lanes and electric vehicle infrastructure, reducing carbon emissions from transportation. Secondly, Vancouver has stringent green building standards, encouraging eco-friendly construction practices and energy-efficient buildings. Thirdly, the city prioritises protecting its natural environment, with initiatives to preserve green spaces, manage water resources sustainably, and promote biodiversity. Additionally, Vancouver\'s commitment to sustainability extends to waste management, with comprehensive recycling programs and efforts to reduce landfill waste. Overall, Vancouver's holistic approach to sustainability, encompassing transportation, construction, environmental protection, and waste management, makes it a leader in sustainable urban living.', 'images/vancouver.webp')">
+      <img src="images/vancouver.webp" alt="Vancouver, Canada">
     </div>
-    <div class="thumbnail" onclick="showDetails('Copenhagen, Denmark', 'Copenhagen is renowned for its commitment to cycling, renewable energy, and sustainable urban development. The city\'s efforts have significantly reduced carbon emissions and improved quality of life.', 'Coursework/images/copenhagen.webp')">
-      <img src="Coursework/images/copenhagen.webp" alt="Copenhagen, Denmark">
+    <div class="thumbnail" onclick="showDetails('Copenhagen, Denmark', 'Copenhagen\'s sustainability shines through its diverse range of initiatives. The city boasts an extensive network of bike lanes and cycling infrastructure, promoting eco-friendly transportation and reducing carbon emissions and traffic congestion. Additionally, Copenhagen is dedicated to renewable energy, with investments in wind power and sustainable architecture, aiming to enhance energy efficiency and minimise reliance on fossil fuels. Moreover, the city places a strong emphasis on preserving green spaces and biodiversity, evident through its abundance of public parks and efforts to protect natural habitats. ', 'images/copenhagen.webp')">
+      <img src="images/copenhagen.webp" alt="Copenhagen, Denmark">
     </div>
-    <div class="thumbnail" onclick="showDetails('Tokyo, Japan', 'Tokyo is known for its advanced technology and sustainable transportation systems. The city prioritizes energy efficiency and green spaces, contributing to its environmental sustainability.', 'Coursework/images/tokyo.webp')">
-      <img src="Coursework/images/tokyo.webp" alt="Tokyo, Japan">
+    <div class="thumbnail" onclick="showDetails('Tokyo, Japan', 'Tokyo\'s sustainability is showcased through its efficient public transportation systems, innovative energy-saving technologies in buildings, abundance of green spaces, and rigorous waste management practices. The city\'s extensive train and subway networks reduce carbon emissions and traffic congestion, while energy-efficient designs in buildings minimise environmental impact. Tokyo\'s numerous parks and gardens not only provide recreational spaces but also improve air quality and promote biodiversity. Additionally, strict waste separation policies encourage recycling and lessen landfill waste. Tokyo\'s comprehensive approach to sustainability makes it a global leader in urban environmental initiatives.', 'images/tokyo.webp')">
+      <img src="images/tokyo.webp" alt="Tokyo, Japan">
     </div>
-    <div class="thumbnail" onclick="showDetails('Oslo, Norway', 'Oslo is committed to reducing carbon emissions and promoting sustainable living. The city invests in renewable energy and eco-friendly infrastructure, making it a leader in environmental sustainability.', 'Coursework/images/oslo.webp')">
-      <img src="Coursework/images/oslo.webp" alt="Oslo, Norway">
+    <div class="thumbnail" onclick="showDetails('Oslo, Norway', 'Tokyo\'s sustainability is showcased through its efficient public transportation systems, innovative energy-saving technologies in buildings, abundance of green spaces, and rigorous waste management practices. The city\'s extensive train and subway networks reduce carbon emissions and traffic congestion, while energy-efficient designs in buildings minimise environmental impact. Tokyo\'s numerous parks and gardens not only provide recreational spaces but also improve air quality and promote biodiversity. Additionally, strict waste separation policies encourage recycling and lessen landfill waste. Tokyo\'s comprehensive approach to sustainability makes it a global leader in urban environmental initiatives.', 'images/oslo.webp')">
+      <img src="images/oslo.webp" alt="Oslo, Norway">
     </div>
   </div>
 
