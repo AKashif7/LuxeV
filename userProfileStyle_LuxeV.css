@@ -7,9 +7,23 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 150px;
-    border-radius: 20px;
     border-width: 10px;
-    border-style: inset;
+    border-radius: 20px;
+    border-style: solid;
     background-color: grey;
     color: white;
+}
+
+#userProfile legend{
+    margin-bottom: -40px;
+}
+
+#userProfileTitle{
+    border-width: 6px;
+    border-radius: 10px;
+    border-style: inset;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

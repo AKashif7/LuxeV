@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <link rel="stylesheet" href="userProfileStyle_LuxeV.css">
+    <link rel="stylesheet" href="Template_LuxeV.css">
     <title>User profile page</title>
 </head>
 <body>
     <fieldset id="userProfile">
-        <legend><h1>User profile</h1></legend>
+        <legend><h2 id="userProfileTitle">User profile</h2></legend>
+
+        <button onclick="answerQuestions()">Complete your user profile</button>
+
         <p>
-            <h2>Personal details</h2>
+            <h3>Personal details</h3>
         </p>
         <p>
             <strong>First name: </strong>
-            <span id="firstName"></span>
+            <span id="answer1">hi</span>
         </p>
         <p>
             <strong>Surname: </strong>
-            <span id="surname"></span>
+            <span id="answer2"></span>
         </p>
         <p>
             <strong>Date of birth: </strong>
-            <span id="dateOfBirth"></span>
+            <span id="answer3"></span>
         </p>
         <hr>
 
         <p>
-            <h2>Contact informaiton</h2>
+            <h3>Contact informaiton</h3>
         </p>
         <p>
             <strong>Home address: </strong>
-            <span id="homeAddress"></span>
+            <span id="answer4"></span>
         </p>
         <p>
             <strong>Phone number: </strong>
-            <span id="phoneNumber"></span>
+            <span id="answer5"></span>
         </p>
         <p>
             <strong>Email: </strong>
-            <span id="email"></span>
+            <span id="answer6"></span>
         </p>
         <hr>
 
         <p>
-            <h2>Search preferences</h2>
+            <h3>Search preferences</h3>
         </p>
         <p>
             <strong>House price: </strong>
-            <span id="housePrice"></span>
+            <span id="answer7"></span>
         </p>
         <p>
             <strong>House location: </strong>
-            <span id="houseLocation"></span>
+            <span id="answer8"></span>
         </p>
         <p>
             <strong>Number of bedrooms: </strong>
-            <span id="numberOfBedrooms"></span>
+            <span id="answer9"></span>
         </p>
         <p>
             <strong>Electric car charging required: </strong>
-            <span id="electricCarCharging"></span>
+            <span id="answer10"></span>
         </p>
         <hr>
-
     </fieldset>
+
+    <script src="userProfileJS_LuxeV.js"></script>
 </body>
 </html>
