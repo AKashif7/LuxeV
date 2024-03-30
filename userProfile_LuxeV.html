@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
@@ -7,18 +8,29 @@
     <link rel="stylesheet" href="Template_LuxeV.css">
     <title>User profile page</title>
 </head>
+
 <body>
     <fieldset id="userProfile">
         <legend><h2 id="userProfileTitle">User profile</h2></legend>
 
-        <button onclick="answerQuestions()">Complete your user profile</button>
+        <button id="completeProfileButton" onclick="answerQuestions()">Complete your user profile</button>
+
+        <div id="profileCompletion">
+            <hr>
+            <label for="profileProgressBar">Profile completion</label>
+            <br>
+            <progress id="profileProgressBar" value="0" max="10">0</progress>
+            <br>
+            <span id="questionCounter"></span>
+            <hr>
+        </div>
 
         <p>
             <h3>Personal details</h3>
         </p>
         <p>
             <strong>First name: </strong>
-            <span id="answer1">hi</span>
+            <span id="answer1"></span>
         </p>
         <p>
             <strong>Surname: </strong>
@@ -31,7 +43,7 @@
         <hr>
 
         <p>
-            <h3>Contact informaiton</h3>
+            <h3>Contact information</h3>
         </p>
         <p>
             <strong>Home address: </strong>
@@ -48,7 +60,7 @@
         <hr>
 
         <p>
-            <h3>Search preferences</h3>
+            <h3>Home searching preferences</h3>
         </p>
         <p>
             <strong>House price: </strong>
