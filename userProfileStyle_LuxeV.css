@@ -41,6 +41,6 @@ body{
     width: 350px;
 }
 
-.unanswered{
-    color: rgb(255, 0, 0);
+.section1 ,.section2 ,.section3{
+    display: none;
 }
