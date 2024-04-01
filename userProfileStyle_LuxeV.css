@@ -41,6 +41,14 @@ body{
     width: 350px;
 }
 
-.section1 ,.section2 ,.section3{
+#section1 ,#section2 ,#section3{
     display: none;
+}
+
+#bottomButtons{
+    display: none;
+}
+
+.unanswered{
+    color: rgb(255, 0, 0);
 }
