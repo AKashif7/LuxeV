@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="shop.css">
+    <script src="D:\Downloads\Web Design\cart.js"></script>
+</head>
+<body>
+  <div id="top-space">
+      <img src="D:\Downloads\Web Design\Images\luxevsplash.jpg" alt="LuxeV Image" />
+      <div id="dark-overlay"></div>
+      <div id="logo-container">
+        <img src="D:\Downloads\Web Design\Images\LuxeV_upscaled.png" alt="LuxeV Logo" />
+        <div id="slogan">LuxeV <br> Explore The Shop </div>
+      </div>
+  </div>
+  <section class="products">
+    <div class="product" id="product1">
+    <img src="D:\Downloads\Web Design\Images\bottle.png" alt="Stainless Steel Bottle">
+    <h2>Reusable Stainless Steel Bottle</h2>
+    <p>This stainless steel bottle is perfect for carrying your favorite beverages on the go. It's durable, eco-friendly, and stylish.</p>
+    <span class="price">£9.99</span>
+    <div class="color-selection">
+        <label for="color1">Color:</label>
+        <select id="color1" name="color1">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="black">Black</option>
+        </select>
+    </div>
+    <div class="quantity">
+        <label for="quantity1">Quantity:</label>
+        <input type="number" id="quantity1" name="quantity1" value="1" min="1">
+    </div>
+    <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+
+  <div class="product">
+      <img src="D:\Downloads\Web Design\Images\solarpanel.png" alt="Solar Panel">
+      <h2>Solar Panel</h2>
+      <p>Harness the power of the sun with this efficient solar panel. It's perfect for powering small electronic devices or charging batteries.</p>
+      <span class="price">£80.00</span>
+      <div class="quantity">
+          <label for="quantity2">Quantity:</label>
+          <input type="number" id="quantity2" name="quantity2" value="1" min="1">
+      </div>
+      <button onclick="addToCart(this)">Add to Cart</button>
+
+  </div>
+
+  <div class="product">
+      <img src="D:\Downloads\Web Design\Images\steelstraw.png" alt="Steel Straw">
+      <h2>Stainless Steel Straw (Reusable) x5</h2>
+      <p>Say goodbye to plastic straws with this set of reusable stainless steel straws. Each straw is durable, easy to clean, and eco-friendly.</p>
+      <span class="price">£10.00</span>
+      <div class="quantity">
+          <label for="quantity3">Quantity:</label>
+          <input type="number" id="quantity3" name="quantity3" value="1" min="1">
+      </div>
+      <button onclick="addToCart(this)">Add to Cart</button>
+
+  </div>
+
+  <div class="product">
+      <img src="D:\Downloads\Web Design\Images\showerhead.png" alt="Shower Head">
+      <h2>Low Flow Shower Head</h2>
+      <p>Upgrade your bathroom with this low flow shower head. It saves water without sacrificing water pressure, helping you conserve resources.</p>
+      <span class="price">£30.00</span>
+      <div class="quantity">
+          <label for="quantity4">Quantity:</label>
+          <input type="number" id="quantity4" name="quantity4" value="1" min="1" >
+      </div>
+      <button onclick="addToCart(this)">Add to Cart</button>
+
+  </div>
+</section>
+
+<section class="basket">
+    <h2>Your Basket</h2>
+    <div class="basket-items">
+        <!-- Basket items SHOULD be added here if it works.. -->
+    </div>
+    <div class="customer-details">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email">
+    </div>
+    <div class="total-price">
+        <span>Total:</span>
+        <span class="total-amount">£0.00</span>
+    </div>
+    <div class="feedback">
+       <label for="feedback">Feedback (optional):</label><br>
+       <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+   </div>
+    <button class="checkout-btn">Checkout</button>
+</section>
+
+
+    <header>
+        <div class="navbar">
+            <a href="#">
+                <img src="D:\Downloads\Web Design\Images\LuxeV.png" alt="LuxeV logo">
+            </a>
+            <ul>
+                <li><a href="Homepage_LuxeV.html">Home</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Our Properties.html">Our Properties</a></li>
+                <li><a href="The Gallery.html">The Gallery</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <footer>
+        <p>Sustainable Shopping!</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Content</title>
+    <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+    <header>
+        <h1>Editor's Page</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="splash.html">Splash Page</a></li>
+            <li><a href="shop.html">Shop Page</a></li>
+        </ul>
+    </nav>
+
+    <main>
+      <section id="editor-info">
+  <h2>Editor: Shohid Ahmed</h2>
+  <p>Role: Student 1 </p>
+  <h2>Completed Tasks:</h2>
+  <ul>
+      <li>
+          <h3>Created Splash Page:</h3>
+          <p>Started with conceptualizing the splash page by brainstorming ideas and sketching rough designs.<br> Then, proceeded to select high-quality images and graphics to enhance visual appeal.<br> Implemented HTML and CSS to create the page elements and style them accordingly. <br>Iteratively refined the design based on feedback from peers and testing to achieve the final captivating splash page.</p>
+      </li>
+      <li>
+        <h3>Developed Shop Page</h3>
+        <p>Started by outlining the structure and layout of the shop page, including the placement of product images, descriptions, and pricing. <br>Implemented HTML markup to create the basic structure of the page.<br> Utilized CSS to style the page elements, ensuring a cohesive and visually appealing design that aligns with the overall theme of the website.<br> Integrated JavaScript to add functionality such as dynamic quantity inputs and an interactive shopping cart.<br> Tested the page across different devices and browsers to ensure compatibility and responsiveness.</p>
+        </li>
+      <li>Implemented JavaScript functionality for adding/removing items from cart</li>
+      <li>Added CSS styles for all pages</li>
+  </ul>
+</section>
+
+
+        <section id="related-pages">
+            <h2>Related Pages:</h2>
+            <ul>
+                <li><a href="splash.html">Splash Page</a></li>
+                <li><a href="shop.html">Shop Page</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WebsiteName. All rights reserved.</p>
+    </footer>
+
+    <button id="goToTopBtn">Go to Top</button>
+
+    <script>
+        // JavaScript for Go to Top button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("goToTopBtn").style.display = "block";
+            } else {
+                document.getElementById("goToTopBtn").style.display = "none";
+            }
+        }
+
+        document.getElementById("goToTopBtn").addEventListener("click", function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+</body>
+</html>
