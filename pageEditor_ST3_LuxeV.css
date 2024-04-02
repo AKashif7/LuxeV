@@ -1,0 +1,24 @@
+body{
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    /* background image source: 'https://www.pexels.com/photo/brown-hut-island-gazebo-38238/', CC0 licence*/
+    background-image: url("backgroundImages/pexels-Brown-Hut-Island-Gazebo-38238.jpg");
+    background-size: 100% auto;
+    color: white;
+}
+
+#userProfile, #teamPage{
+    border-style: inset;
+    border-radius: 10px;
+    border-width: 7px;
+    background-color: rgba(80, 80, 80, 70%);
+}
+
+a:link{
+    color:white;
+}
+
+a:visited{
+    color: white;
+}
