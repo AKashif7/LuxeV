@@ -21,23 +21,23 @@ function answerQuestions(){
         document.getElementById("section1").style.display = "inline";
         document.getElementById("section2").style.display = "inline";
         document.getElementById("section3").style.display = "inline";
-        document.getElementById("Next Section").style.display = "none";
-        // This hides the 'Next section' button when the page displayes all 3 completed sections.
+        document.getElementById("nextSection").style.display = "none";
+        // This hides the 'nextSection' button when the page displayes all 3 completed sections.
         console.log("The profile has been completed!")
     }
     else if (currentSection == 4){
         /*In this Else if statement, when the 'currentSection' = 4, all sections are displayed on screen.
         This presents all sections to the screen, but with the unanswered questions that need to be filled, 
-        without hidding the 'Next section' button unlike the above if statement*/
+        without hidding the 'nextSection' button unlike the above if statement*/
         console.log("All sections have been gone through, displaying all sections")
         document.getElementById("section1").style.display = "inline";
         document.getElementById("section2").style.display = "inline";
         document.getElementById("section3").style.display = "inline";
         // Setting 'profileEditingMode' to false, results in 'Profile editing mode' being turned off once the user returns to the page displaying all sections.
         profileEditingMode = false;
-        document.getElementById("Next Section").innerText = "Fill in unanswered questions";
+        document.getElementById("nextSection").innerText = "Fill in unanswered questions";
         currentSection = 0;
-        console.log("The variable 'currentSection', has been set to 0; it will increment to 1 when next section is opened")
+        console.log("The variable 'currentSection', has been set to 0; it will increment to 1 when nextSection is opened")
     }
     else{
         /*This Else statement, results in the user being able to answer section questions,
@@ -72,8 +72,8 @@ function answerQuestions(){
 
         console.log(section1Answers + "\n" + section2Answers + "\n" + section3Answers)
 
-        // This makes the 'Next section' button reappear on screen when the page is not displaying all 3 sections.
-        document.getElementById("Next Section").style.display = "inline";
+        // This makes the 'nextSection' button reappear on screen when the page is not displaying all 3 sections.
+        document.getElementById("nextSection").style.display = "inline";
 
         for (k = 0; k < sectionQuestions.length; k++){
             /* Based upon the switch case, This for loop iterates through the relavent sections of questions and corresponding answer arrays,
@@ -104,7 +104,7 @@ function answerQuestions(){
 }
 
 function toggleOnIgnoreIfAnswered(){
-    /* This funciton is called when the 'Edit answers' button is pressed, which results in 'profileEditingMode' being set to true.
+    /* This funciton is called when the 'editAnswers' button is pressed, which results in 'profileEditingMode' being set to true.
     This allows for questions that have been answered to be re-answered, allowing for answer editing.*/
     profileEditingMode = true;
     currentSection = 0;
