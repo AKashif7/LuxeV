@@ -1,3 +1,11 @@
+body{
+    margin-top: 100px;
+    margin-bottom: 250px;
+    /* background image source: 'https://www.pexels.com/photo/beige-bungalow-house-259588/', CC0 licence*/
+    background-image: url("backgroundImages/pexels-beige-bungalow-house-259588.jpg");
+    background-size: 100% auto;
+}
+
 #titleTeamPage{
     text-align: center;
     text-decoration: underline;
@@ -13,12 +21,17 @@
     position: relative;
     margin-left: 10px;
     margin-right: 10px;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-radius: 5px;
+    border-width: 7px;
+    border-color: white;
 }
 
 .teamMember img{
     width: 300px;
     height: auto;
-    opacity: 1;
+    opacity: 0.60;
 }
 
 .dropdown{
@@ -30,15 +43,24 @@
 }
 
 .teamMember:hover img{
-    opacity: 0.8;
+    opacity: 1;
     scale: 1.04;
 }
 
 .teamMember:hover .dropdown{
     display: block;
-    border-bottom-style: solid;
     border-left-style: solid;
-    border-bottom-width: 10px;
-    border-left-width: 3px;
-    background-color: rgba(100, 100, 100, 50%);
+    border-left-width: 7px;
+    border-color: white;
+    background-color: rgba(100, 100, 100, 70%);
+}
+
+#footer{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+    background-color: black;
 }
