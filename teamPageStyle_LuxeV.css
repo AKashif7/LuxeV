@@ -1,0 +1,44 @@
+#titleTeamPage{
+    text-align: center;
+    text-decoration: underline;
+}
+
+#team{
+    display: flex;
+    justify-content: center;
+}
+
+.teamMember{
+    display: inline;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.teamMember img{
+    width: 300px;
+    height: auto;
+    opacity: 1;
+}
+
+.dropdown{
+    display: none;
+    position: absolute;
+    width: 280px;
+    margin-top: 6px;
+    padding: 10px;
+}
+
+.teamMember:hover img{
+    opacity: 0.8;
+    scale: 1.04;
+}
+
+.teamMember:hover .dropdown{
+    display: block;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-bottom-width: 10px;
+    border-left-width: 3px;
+    background-color: rgba(100, 100, 100, 50%);
+}
